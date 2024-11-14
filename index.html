@@ -12,7 +12,7 @@
             font-family: 'Roboto', sans-serif;
         }
         .hero {
-            background: url('https://via.placeholder.com/1600x800') no-repeat center center/cover;
+            background: url('https://mindcraft.pk/wp-content/uploads/2023/08/hero-image.jpg') no-repeat center center/cover;
             height: 80vh;
             color: white;
             display: flex;
@@ -65,7 +65,8 @@
     <div class="section" id="about">
         <div class="container">
             <h2>About Me</h2>
-            <p>I'm Muhammad Usman, an IT professional specializing in digital business integrations and digital marketing services. With years of experience in the IT field, I help businesses grow by seamlessly connecting technology with strategic marketing approaches.</p>
+            <p>I'm Muhammad Usman, an IT professional specializing in digital business integrations and digital marketing services. With nearly two decades of experience in the IT field, I've worked on impactful projects, including Social Media Interaction Systems for Political Activities and Online Project Monitoring Systems. Currently, I serve as the Chief Marketing Officer at BizTrax, crafting data-driven marketing strategies to boost brand visibility and connect with audiences.</p>
+            <p>My expertise covers a wide range of services, including strategic IT planning, robust application development, IT infrastructure, digital marketing, and advanced project management. I also have a background in providing technology management and leadership, focusing on innovative solutions that meet evolving business needs.</p>
         </div>
     </div>
 
@@ -76,25 +77,34 @@
             <div class="row">
                 <div class="col s12 m4">
                     <div class="card hoverable">
+                        <div class="card-image">
+                            <img src="https://mindcraft.pk/wp-content/uploads/2023/08/digital-integration.jpg" alt="Digital Integrations">
+                        </div>
                         <div class="card-content">
                             <span class="card-title">Digital Integrations</span>
-                            <p>I provide seamless integration of various business platforms and IT solutions to ensure smooth operations and optimized business processes.</p>
+                            <p>I provide seamless integration of various business platforms and IT solutions to ensure smooth operations and optimized business processes. This includes integration of Google Workspace, databases, and software development projects to streamline business activities.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col s12 m4">
                     <div class="card hoverable">
+                        <div class="card-image">
+                            <img src="https://mindcraft.pk/wp-content/uploads/2023/08/digital-marketing.jpg" alt="Digital Marketing">
+                        </div>
                         <div class="card-content">
                             <span class="card-title">Digital Marketing</span>
-                            <p>From SEO to social media management, I offer comprehensive digital marketing services that help you reach your target audience and grow your brand.</p>
+                            <p>From SEO to social media management, I offer comprehensive digital marketing services that help you reach your target audience and grow your brand. My goal is to create personalized digital narratives that resonate with the audience and boost brand engagement.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col s12 m4">
                     <div class="card hoverable">
+                        <div class="card-image">
+                            <img src="https://mindcraft.pk/wp-content/uploads/2023/08/analytics-optimization.jpg" alt="Analytics & Optimization">
+                        </div>
                         <div class="card-content">
                             <span class="card-title">Analytics & Optimization</span>
-                            <p>Data-driven solutions to track and optimize your business performance, helping you achieve your digital goals effectively and efficiently.</p>
+                            <p>Data-driven solutions to track and optimize your business performance, helping you achieve your digital goals effectively and efficiently. This includes building analytics dashboards to visualize business metrics and track campaign success.</p>
                         </div>
                     </div>
                 </div>
@@ -110,33 +120,33 @@
                 <div class="col s12 m4">
                     <div class="card hoverable">
                         <div class="card-image">
-                            <img src="https://via.placeholder.com/500x300">
+                            <img src="https://mindcraft.pk/wp-content/uploads/2023/08/business-integration-project.jpg" alt="Project 1">
                         </div>
                         <div class="card-content">
                             <span class="card-title">Project 1 - Business Integration</span>
-                            <p>Description of Project 1.</p>
+                            <p>A project involving seamless integration of business platforms to enhance efficiency and productivity. Successfully implemented a system to streamline internal processes and improve workflow.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col s12 m4">
                     <div class="card hoverable">
                         <div class="card-image">
-                            <img src="https://via.placeholder.com/500x300">
+                            <img src="https://mindcraft.pk/wp-content/uploads/2023/08/digital-marketing-campaign.jpg" alt="Project 2">
                         </div>
                         <div class="card-content">
                             <span class="card-title">Project 2 - Digital Marketing Campaign</span>
-                            <p>Description of Project 2.</p>
+                            <p>Executed a successful digital marketing campaign that increased brand engagement and visibility. Utilized data analytics and targeted strategies to effectively reach potential customers and drive growth.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col s12 m4">
                     <div class="card hoverable">
                         <div class="card-image">
-                            <img src="https://via.placeholder.com/500x300">
+                            <img src="https://mindcraft.pk/wp-content/uploads/2023/08/analytics-dashboard.jpg" alt="Project 3">
                         </div>
                         <div class="card-content">
                             <span class="card-title">Project 3 - Analytics Dashboard</span>
-                            <p>Description of Project 3.</p>
+                            <p>Developed an analytics dashboard for data visualization and performance optimization. This dashboard provided real-time insights and helped in making informed business decisions.</p>
                         </div>
                     </div>
                 </div>
@@ -150,17 +160,17 @@
             <h2 class="center">Get in Touch</h2>
             <div class="row">
                 <div class="col s12 m6">
-                    <form>
+                    <form id="contact-form">
                         <div class="input-field">
-                            <input id="name" type="text" class="validate">
+                            <input id="name" name="name" type="text" class="validate" required>
                             <label for="name">Name</label>
                         </div>
                         <div class="input-field">
-                            <input id="email" type="email" class="validate">
+                            <input id="email" name="email" type="email" class="validate" required>
                             <label for="email">Email</label>
                         </div>
                         <div class="input-field">
-                            <textarea id="message" class="materialize-textarea"></textarea>
+                            <textarea id="message" name="message" class="materialize-textarea" required></textarea>
                             <label for="message">Message</label>
                         </div>
                         <button type="submit" class="btn blue darken-4 waves-effect waves-light">Send</button>
@@ -168,8 +178,8 @@
                 </div>
                 <div class="col s12 m6">
                     <h3>Contact Information</h3>
-                    <p>Email: <a href="mailto:usman@example.com">usman@example.com</a></p>
-                    <p>Phone: +123-456-7890</p>
+                    <p>Email: <a href="mailto:usman.ilm@gmail.com">usman.ilm@gmail.com</a></p>
+                    <p>Phone: +00923134781876</p>
                 </div>
             </div>
         </div>
@@ -191,6 +201,16 @@
             M.Sidenav.init(sideNav);
             const scrollSpy = document.querySelectorAll('.scrollspy');
             M.ScrollSpy.init(scrollSpy, {});
+        });
+
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            window.location.href = `mailto:usman.ilm@gmail.com?subject=Contact from ${name}&body=Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
         });
     </script>
 </body>
