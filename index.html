@@ -4,21 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muhammad Usman - IT Professional</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        .navbar {
-            background-color: #007bff;
-            overflow: hidden;
-            padding: 1rem;
-        }
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            padding: 0.5rem;
+            font-family: 'Roboto', sans-serif;
         }
         .hero {
             background: url('https://via.placeholder.com/1600x800') no-repeat center center/cover;
@@ -28,12 +19,6 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-        }
-        .hero h1 {
-            font-size: 3rem;
-        }
-        .section {
-            padding: 4rem 1rem;
         }
         footer {
             background: #333;
@@ -45,78 +30,168 @@
 </head>
 <body>
     <!-- Navbar -->
-    <div class="navbar">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#contact">Contact</a>
-    </div>
+    <nav class="nav-wrapper blue darken-4">
+        <div class="container">
+            <a href="#" class="brand-logo">Muhammad Usman</a>
+            <a href="#" class="sidenav-trigger" data-target="mobile-menu">
+                <i class="material-icons">menu</i>
+            </a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-menu">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
 
     <!-- Hero Section -->
     <div class="hero">
         <div>
-            <h1>Welcome to My Digital World</h1>
-            <p>I provide digital business integrations & marketing solutions for modern businesses.</p>
-            <a href="#contact" style="color: #007bff; background-color: white; padding: 1rem 2rem; text-decoration: none;">Get in Touch</a>
+            <h1 class="white-text">Welcome to My Digital World</h1>
+            <p class="white-text">I provide digital business integrations & marketing solutions for modern businesses.</p>
+            <a href="#contact" class="btn-large blue darken-4 waves-effect waves-light">Get in Touch</a>
         </div>
     </div>
 
     <!-- About Section -->
     <div class="section" id="about">
-        <h2>About Me</h2>
-        <p>I'm Muhammad Usman, an IT professional specializing in digital business integrations and digital marketing services. With years of experience in the IT field, I help businesses grow by seamlessly connecting technology with strategic marketing approaches.</p>
+        <div class="container">
+            <h2>About Me</h2>
+            <p>I'm Muhammad Usman, an IT professional specializing in digital business integrations and digital marketing services. With years of experience in the IT field, I help businesses grow by seamlessly connecting technology with strategic marketing approaches.</p>
+        </div>
     </div>
 
     <!-- Services Section -->
-    <div class="section" id="services" style="background-color: #f4f4f4;">
-        <h2>Services</h2>
-        <div>
-            <h3>Digital Integrations</h3>
-            <p>I provide seamless integration of various business platforms and IT solutions to ensure smooth operations and optimized business processes.</p>
-            <h3>Digital Marketing</h3>
-            <p>From SEO to social media management, I offer comprehensive digital marketing services that help you reach your target audience and grow your brand.</p>
-            <h3>Analytics & Optimization</h3>
-            <p>Data-driven solutions to track and optimize your business performance, helping you achieve your digital goals effectively and efficiently.</p>
+    <div class="section grey lighten-4" id="services">
+        <div class="container">
+            <h2 class="center">Services</h2>
+            <div class="row">
+                <div class="col s12 m4">
+                    <div class="card hoverable">
+                        <div class="card-content">
+                            <span class="card-title">Digital Integrations</span>
+                            <p>I provide seamless integration of various business platforms and IT solutions to ensure smooth operations and optimized business processes.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m4">
+                    <div class="card hoverable">
+                        <div class="card-content">
+                            <span class="card-title">Digital Marketing</span>
+                            <p>From SEO to social media management, I offer comprehensive digital marketing services that help you reach your target audience and grow your brand.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m4">
+                    <div class="card hoverable">
+                        <div class="card-content">
+                            <span class="card-title">Analytics & Optimization</span>
+                            <p>Data-driven solutions to track and optimize your business performance, helping you achieve your digital goals effectively and efficiently.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
     <!-- Portfolio Section -->
     <div class="section" id="portfolio">
-        <h2>Portfolio</h2>
-        <div>
-            <h3>Project 1 - Business Integration</h3>
-            <p>Description of Project 1.</p>
-            <h3>Project 2 - Digital Marketing Campaign</h3>
-            <p>Description of Project 2.</p>
-            <h3>Project 3 - Analytics Dashboard</h3>
-            <p>Description of Project 3.</p>
+        <div class="container">
+            <h2 class="center">Portfolio</h2>
+            <div class="row">
+                <div class="col s12 m4">
+                    <div class="card hoverable">
+                        <div class="card-image">
+                            <img src="https://via.placeholder.com/500x300">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title">Project 1 - Business Integration</span>
+                            <p>Description of Project 1.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m4">
+                    <div class="card hoverable">
+                        <div class="card-image">
+                            <img src="https://via.placeholder.com/500x300">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title">Project 2 - Digital Marketing Campaign</span>
+                            <p>Description of Project 2.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m4">
+                    <div class="card hoverable">
+                        <div class="card-image">
+                            <img src="https://via.placeholder.com/500x300">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title">Project 3 - Analytics Dashboard</span>
+                            <p>Description of Project 3.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
     <!-- Contact Section -->
-    <div class="section" id="contact" style="background-color: #f4f4f4;">
-        <h2>Get in Touch</h2>
-        <form>
-            <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name"><br><br>
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email"><br><br>
-            <label for="message">Message:</label><br>
-            <textarea id="message" name="message"></textarea><br><br>
-            <button type="submit">Send</button>
-        </form>
-        <div>
-            <h3>Contact Information</h3>
-            <p>Email: <a href="mailto:usman@example.com">usman@example.com</a></p>
-            <p>Phone: +123-456-7890</p>
+    <div class="section grey lighten-4" id="contact">
+        <div class="container">
+            <h2 class="center">Get in Touch</h2>
+            <div class="row">
+                <div class="col s12 m6">
+                    <form>
+                        <div class="input-field">
+                            <input id="name" type="text" class="validate">
+                            <label for="name">Name</label>
+                        </div>
+                        <div class="input-field">
+                            <input id="email" type="email" class="validate">
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="input-field">
+                            <textarea id="message" class="materialize-textarea"></textarea>
+                            <label for="message">Message</label>
+                        </div>
+                        <button type="submit" class="btn blue darken-4 waves-effect waves-light">Send</button>
+                    </form>
+                </div>
+                <div class="col s12 m6">
+                    <h3>Contact Information</h3>
+                    <p>Email: <a href="mailto:usman@example.com">usman@example.com</a></p>
+                    <p>Phone: +123-456-7890</p>
+                </div>
+            </div>
         </div>
     </div>
 
     <!-- Footer -->
-    <footer>
-        <p>Connect with Me</p>
-        <p>Stay in touch for updates on my work and insights in the digital world.</p>
-        <p>&copy; 2024 Muhammad Usman. All rights reserved.</p>
+    <footer class="page-footer blue darken-4">
+        <div class="container">
+            <p>Connect with Me</p>
+            <p>Stay in touch for updates on my work and insights in the digital world.</p>
+            <p>&copy; 2024 Muhammad Usman. All rights reserved.</p>
+        </div>
     </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sideNav = document.querySelectorAll('.sidenav');
+            M.Sidenav.init(sideNav);
+            const scrollSpy = document.querySelectorAll('.scrollspy');
+            M.ScrollSpy.init(scrollSpy, {});
+        });
+    </script>
 </body>
 </html>
