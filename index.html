@@ -25,23 +25,29 @@
 }
 
 .hero {
-    background: linear-gradient(135deg, #2196f3, #21cbf3);
-    background-size: 400% 400%;
-    animation: gradientAnimation 5s infinite;
+    position: relative;
     height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    position: relative;
-    overflow: hidden;
     color: white;
+    overflow: hidden;
+    background: linear-gradient(-45deg, #1e90ff, #ff6f61, #ffd700, #8a2be2);
+    background-size: 400% 400%;
+    animation: gradientAnimation 6s ease infinite;
 }
 
 @keyframes gradientAnimation {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .animated-balls {
@@ -50,23 +56,23 @@
     left: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden;
     z-index: -1;
+    overflow: hidden;
 }
 
 .ball {
     position: absolute;
     border-radius: 50%;
-    opacity: 0.6;
-    animation: float 6s infinite ease-in-out;
+    opacity: 0.7;
+    animation: float 6s ease-in-out infinite;
 }
 
 .ball-1 {
     width: 100px;
     height: 100px;
-    background-color: #ff4081;
-    top: 10%;
-    left: 20%;
+    background-color: rgba(255, 105, 180, 0.6);
+    top: 20%;
+    left: 30%;
     animation-delay: 0s;
     animation-duration: 8s;
 }
@@ -74,28 +80,45 @@
 .ball-2 {
     width: 150px;
     height: 150px;
-    background-color: #2196f3;
-    top: 40%;
+    background-color: rgba(30, 144, 255, 0.6);
+    top: 50%;
     left: 70%;
     animation-delay: 2s;
-    animation-duration: 7s;
+    animation-duration: 10s;
 }
 
 .ball-3 {
     width: 80px;
     height: 80px;
-    background-color: #8bc34a;
+    background-color: rgba(173, 216, 230, 0.6);
     top: 80%;
-    left: 30%;
+    left: 40%;
     animation-delay: 4s;
-    animation-duration: 9s;
+    animation-duration: 7s;
 }
 
 @keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-30px); }
-    100% { transform: translateY(0px); }
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-30px);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
+.section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.section.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 
     </style>
 </head>
@@ -300,6 +323,26 @@
     }, { threshold: 0.2 });
 
     sections.forEach(section => {
+        observer.observe(section);
+    });
+});
+
+        document.addEventListener('DOMContentLoaded', () => {
+    // Initialize Sidenav
+    const sideNav = document.querySelectorAll('.sidenav');
+    M.Sidenav.init(sideNav);
+
+    // Initialize Scroll Animations
+    const sections = document.querySelectorAll('.section');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+            }
+        });
+    });
+
+    sections.forEach((section) => {
         observer.observe(section);
     });
 });
