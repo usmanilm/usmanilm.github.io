@@ -19,19 +19,20 @@
             padding: 2rem 0;
         }
         nav {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-.dropdown-content {
-    position: absolute;
-    top: 100%; /* Ensures it appears below the navbar */
-    z-index: 1100; /* Higher than the navbar */
-    margin-top: 10px; /* Adds spacing between navbar and dropdown */
-}
-.sidenav {
-    z-index: 1200; /* Higher than the sticky navbar */
-}
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .dropdown-content {
+            position: absolute !important;
+            top: 100% !important;
+            margin-top: 10px;
+            z-index: 1100 !important;
+        }
+        .section {
+            scroll-margin-top: 70px; /* Adjust this value based on navbar height */
+            padding: 50px 0;
+        }
 
 .hero {
     position: relative;
