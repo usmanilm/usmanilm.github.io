@@ -12,6 +12,15 @@
         body {
             font-family: 'Roboto', sans-serif;
         }
+        .hero {
+            background: url('/heroimage.png') no-repeat center center/cover;
+            height: 80vh;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
         footer {
             background: #000;
             color: white;
@@ -19,161 +28,124 @@
             padding: 2rem 0;
         }
         nav {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        .dropdown-content {
-            position: absolute !important;
-            top: 100% !important;
-            margin-top: 10px;
-            z-index: 1100 !important;
-        }
-        .section {
-            scroll-margin-top: 70px; /* Adjust this value based on navbar height */
-            padding: 50px 0;
-        }
-
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 .hero {
-    position: relative;
+    background: linear-gradient(135deg, #2196f3, #21cbf3);
+    animation: gradientAnimation 5s infinite;
     height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    overflow: hidden;
     color: white;
-    overflow: hidden;
-    background: linear-gradient(-45deg, #1e90ff, #ff6f61, #ffd700, #8a2be2);
-    background-size: 400% 400%;
-    animation: gradientAnimation 6s ease infinite;
 }
-
 @keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-.animated-balls {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    overflow: hidden;
-}
-
-.ball {
-    position: absolute;
-    border-radius: 50%;
-    opacity: 0.7;
-    animation: float 6s ease-in-out infinite;
-}
-
-.ball-1 {
-    width: 100px;
-    height: 100px;
-    background-color: rgba(255, 105, 180, 0.6);
-    top: 20%;
-    left: 30%;
-    animation-delay: 0s;
-    animation-duration: 8s;
-}
-
-.ball-2 {
-    width: 150px;
-    height: 150px;
-    background-color: rgba(30, 144, 255, 0.6);
-    top: 50%;
-    left: 70%;
-    animation-delay: 2s;
-    animation-duration: 10s;
-}
-
-.ball-3 {
-    width: 80px;
-    height: 80px;
-    background-color: rgba(173, 216, 230, 0.6);
-    top: 80%;
-    left: 40%;
-    animation-delay: 4s;
-    animation-duration: 7s;
-}
-
-@keyframes float {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-30px);
-    }
-    100% {
-        transform: translateY(0);
-    }
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 .section {
-    scroll-margin-top: 70px; /* Adjust this value based on your navbar height */
     opacity: 0;
     transform: translateY(50px);
-    transition: opacity 1s ease, transform 1s ease;
+    transition: all 0.6s ease-in-out;
 }
-
-.section.animate {
+.section.active {
     opacity: 1;
     transform: translateY(0);
 }
-
-
+.animated-balls {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+.ball {
+    position: absolute;
+    border-radius: 50%;
+    animation: float 10s infinite ease-in-out;
+    opacity: 0.6;
+}
+.ball-1 {
+    width: 50px;
+    height: 50px;
+    background-color: #ff4081;
+    top: 20%;
+    left: 30%;
+    animation-delay: 0s;
+}
+.ball-2 {
+    width: 70px;
+    height: 70px;
+    background-color: #2196f3;
+    top: 50%;
+    left: 70%;
+    animation-delay: 2s;
+}
+.ball-3 {
+    width: 40px;
+    height: 40px;
+    background-color: #8bc34a;
+    top: 80%;
+    left: 40%;
+    animation-delay: 4s;
+}
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
     </style>
 </head>
 <body>
     <!-- Navbar -->
-<nav class="nav-wrapper blue darken-4">
-    <div class="container">
-        <a href="#" class="brand-logo">M. Usman</a>
-        <a href="#" class="sidenav-trigger" data-target="mobile-menu">
-            <i class="material-icons">menu</i>
-        </a>
-        <ul class="right hide-on-med-and-down">
-            <li><a href="#about">About</a></li>
-            <li>
-                <a class="dropdown-trigger" href="#!" data-target="dropdown1">Services<i class="material-icons right">arrow_drop_down</i></a>
-            </li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </div>
-</nav>
+    <nav class="nav-wrapper blue darken-4">
+        <div class="container">
+            <a href="#" class="brand-logo">M. Usman</a>
+            <a href="#" class="sidenav-trigger" data-target="mobile-menu">
+                <i class="material-icons">menu</i>
+            </a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-<ul id="dropdown1" class="dropdown-content">
-    <li><a href="#digital">Digital Integration</a></li>
-    <li><a href="#marketing">Digital Marketing</a></li>
-    <li><a href="#analytics">Analytics</a></li>
-</ul>
-
+    <ul class="sidenav" id="mobile-menu">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
 
     <!-- Hero Section -->
-    <div class="hero">
     <div>
         <h1 class="white-text">Welcome to My Digital World</h1>
         <p class="white-text">I provide digital business integrations & marketing solutions for modern businesses.</p>
         <a href="#contact" class="btn-large black darken-4 waves-effect waves-light">Get in Touch</a>
-    </div>
-    <div class="animated-balls">
-        <div class="ball ball-1"></div>
-        <div class="ball ball-2"></div>
-        <div class="ball ball-3"></div>
+        <div class="animated-balls">
+            <div class="ball ball-1"></div>
+            <div class="ball ball-2"></div>
+            <div class="ball ball-3"></div>
+        </div>
     </div>
 </div>
-
-
 
     <!-- About Section -->
     <div class="section" id="about">
@@ -304,7 +276,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" defer></script>
     <script>
-           document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function() {
             const sideNav = document.querySelectorAll('.sidenav');
             M.Sidenav.init(sideNav);
             const scrollSpy = document.querySelectorAll('.scrollspy');
@@ -320,6 +292,23 @@
 
             window.location.href = `mailto:usman.ilm@gmail.com?subject=Contact from ${name}&body=Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
         });
+        document.addEventListener('DOMContentLoaded', function () {
+    // Initialize Materialize components
+    const sideNav = document.querySelectorAll('.sidenav');
+    M.Sidenav.init(sideNav);
+    // Observe sections for animation on scroll
+    const sections = document.querySelectorAll('.section');
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, { threshold: 0.2 });
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+});
 
     </script>
 </body>
