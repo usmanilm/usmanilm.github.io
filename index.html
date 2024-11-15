@@ -304,18 +304,11 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" defer></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Initialize sidenav
+           document.addEventListener('DOMContentLoaded', function() {
             const sideNav = document.querySelectorAll('.sidenav');
             M.Sidenav.init(sideNav);
-
-            // Initialize dropdown
-            const dropdowns = document.querySelectorAll('.dropdown-trigger');
-            M.Dropdown.init(dropdowns, {
-                coverTrigger: false, // Ensure dropdown appears below trigger
-                constrainWidth: false, // Allow custom width
-                alignment: 'right', // Align dropdown to the right
-            });
+            const scrollSpy = document.querySelectorAll('.scrollspy');
+            M.ScrollSpy.init(scrollSpy, {});
         });
 
         document.getElementById('contact-form').addEventListener('submit', function(event) {
