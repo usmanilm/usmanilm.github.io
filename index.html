@@ -304,44 +304,6 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" defer></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const sideNav = document.querySelectorAll('.sidenav');
-            M.Sidenav.init(sideNav);
-            const scrollSpy = document.querySelectorAll('.scrollspy');
-            M.ScrollSpy.init(scrollSpy, {});
-        });
-
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-
-            window.location.href = `mailto:usman.ilm@gmail.com?subject=Contact from ${name}&body=Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
-        });
-        document.addEventListener('DOMContentLoaded', function () {
-    // Initialize Materialize components
-    const sideNav = document.querySelectorAll('.sidenav');
-    M.Sidenav.init(sideNav);
-
-    // Observe sections for animation on scroll
-    const sections = document.querySelectorAll('.section');
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-            }
-        });
-    }, { threshold: 0.2 });
-
-    sections.forEach(section => {
-        observer.observe(section);
-    });
-});
-
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" defer></script>
-    <script>
         document.addEventListener('DOMContentLoaded', function () {
             // Initialize sidenav
             const sideNav = document.querySelectorAll('.sidenav');
@@ -354,6 +316,16 @@
                 constrainWidth: false, // Allow custom width
                 alignment: 'right', // Align dropdown to the right
             });
+        });
+
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            window.location.href = `mailto:usman.ilm@gmail.com?subject=Contact from ${name}&body=Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
         });
 
     </script>
