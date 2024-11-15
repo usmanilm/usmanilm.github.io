@@ -19,10 +19,18 @@
             padding: 2rem 0;
         }
         nav {
-    background: black;
     position: sticky;
     top: 0;
     z-index: 1000;
+}
+.dropdown-content {
+    position: absolute;
+    top: 100%; /* Ensures it appears below the navbar */
+    z-index: 1100; /* Higher than the navbar */
+    margin-top: 10px; /* Adds spacing between navbar and dropdown */
+}
+.sidenav {
+    z-index: 1200; /* Higher than the sticky navbar */
 }
 
 .hero {
@@ -110,6 +118,7 @@
     }
 }
 .section {
+    scroll-margin-top: 70px; /* Adjust this value based on your navbar height */
     opacity: 0;
     transform: translateY(50px);
     transition: opacity 1s ease, transform 1s ease;
@@ -125,28 +134,29 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="nav-wrapper blue darken-4">
-        <div class="container">
-            <a href="#" class="brand-logo">M. Usman</a>
-            <a href="#" class="sidenav-trigger" data-target="mobile-menu">
-                <i class="material-icons">menu</i>
-            </a>
-            <ul class="right hide-on-med-and-down">
-                <li><a Menu </a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+<nav class="nav-wrapper blue darken-4">
+    <div class="container">
+        <a href="#" class="brand-logo">M. Usman</a>
+        <a href="#" class="sidenav-trigger" data-target="mobile-menu">
+            <i class="material-icons">menu</i>
+        </a>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="#about">About</a></li>
+            <li>
+                <a class="dropdown-trigger" href="#!" data-target="dropdown1">Services<i class="material-icons right">arrow_drop_down</i></a>
+            </li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
 
-    <ul class="sidenav" id="mobile-menu">
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
+<ul id="dropdown1" class="dropdown-content">
+    <li><a href="#digital">Digital Integration</a></li>
+    <li><a href="#marketing">Digital Marketing</a></li>
+    <li><a href="#analytics">Analytics</a></li>
+</ul>
+
 
     <!-- Hero Section -->
     <div class="hero">
@@ -348,6 +358,17 @@
         observer.observe(section);
     });
 });
+        document.addEventListener('DOMContentLoaded', function () {
+    const sideNav = document.querySelectorAll('.sidenav');
+    M.Sidenav.init(sideNav);
+
+    const dropdowns = document.querySelectorAll('.dropdown-trigger');
+    M.Dropdown.init(dropdowns, {
+        coverTrigger: false, // Ensures dropdown doesn't hide under the navbar
+        constrainWidth: false, // Allows custom width
+    });
+});
+
 
     </script>
 </body>
