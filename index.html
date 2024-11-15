@@ -339,36 +339,21 @@
     });
 });
 
-        document.addEventListener('DOMContentLoaded', () => {
-    // Initialize Sidenav
-    const sideNav = document.querySelectorAll('.sidenav');
-    M.Sidenav.init(sideNav);
-
-    // Initialize Scroll Animations
-    const sections = document.querySelectorAll('.section');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate');
-            }
-        });
-    });
-
-    sections.forEach((section) => {
-        observer.observe(section);
-    });
-});
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" defer></script>
+    <script>
         document.addEventListener('DOMContentLoaded', function () {
-    const sideNav = document.querySelectorAll('.sidenav');
-    M.Sidenav.init(sideNav);
+            // Initialize sidenav
+            const sideNav = document.querySelectorAll('.sidenav');
+            M.Sidenav.init(sideNav);
 
-    const dropdowns = document.querySelectorAll('.dropdown-trigger');
-    M.Dropdown.init(dropdowns, {
-        coverTrigger: false, // Ensures dropdown doesn't hide under the navbar
-        constrainWidth: false, // Allows custom width
-    });
-});
-
+            // Initialize dropdown
+            const dropdowns = document.querySelectorAll('.dropdown-trigger');
+            M.Dropdown.init(dropdowns, {
+                coverTrigger: false, // Ensure dropdown appears below trigger
+                constrainWidth: false, // Allow custom width
+                alignment: 'right', // Align dropdown to the right
+            });
+        });
 
     </script>
 </body>
